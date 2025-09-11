@@ -27,7 +27,7 @@ jobs:
 
       - name: Build
         run: |
-          brew intall qt
+          brew install qt
           mkdir build
           cd build
           qmake ../msrc_gui

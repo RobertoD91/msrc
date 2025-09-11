@@ -6,7 +6,6 @@ on:
     types: [published]
 
 env:
-  FIRMWARE_FILENAME: MSRC-RP2040_${{ github.ref_name }}.uf2
   LINK_FILENAME: msrc_link_${{ github.ref_name }}
 
 permissions:
@@ -27,7 +26,11 @@ jobs:
 
       - name: Build
         run: |
+          echo PIPPOZZO1
           brew install qt
+          brew info qt
+          echo PIPPOZZO2
+          uname -a
           mkdir build
           cd build
           qmake ../msrc_gui

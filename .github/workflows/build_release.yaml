@@ -22,16 +22,12 @@ jobs:
       - name: Get actions code
         uses: actions/checkout@v4
         
-      - name: Install QT
-        uses: jurplel/install-qt-action@v4
-        with:
-          version: '5.15.2'
-        
       - name: Git tags
         run: git fetch --prune --unshallow
 
       - name: Build
         run: |
+          brew intall qt
           mkdir build
           cd build
           qmake ../msrc_gui
